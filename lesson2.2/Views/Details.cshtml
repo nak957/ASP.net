@@ -1,0 +1,8 @@
+﻿@model Song
+
+<h2>@Model.Name</h2>
+<p>@Model.Description</p>
+<audio controls>
+    <source src="@Model.Url" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
+</audio>

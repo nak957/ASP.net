@@ -1,0 +1,13 @@
+﻿@model Dictionary<int, List<int>>
+
+<h2>Bảng Cửu Chương từ 2-9</h2>
+@foreach (var table in Model)
+{
+    <h3>Bảng cửu chương số @table.Key</h3>
+    <ul>
+        @foreach (var result in table.Value)
+        {
+            <li>@result</li>
+        }
+    </ul>
+}

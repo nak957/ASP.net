@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Ngôn Ngữ Razor";
+}
+
+<h2>Ngôn Ngữ Razor</h2>
+<h3>Biến</h3>
+@{ 
+    var name = "Phạm Thế Quyền";
+    int age = 45;
+    DateTime dt = DateTime.Now;
+}
+<p>Họ Tên:@name</p>
+<p>Tuổi:@age</p>
+<p>Time:@dt</p>
+<h3>câu lệnh if</h3>
+@{ 
+    if(age<20)
+     {
+       <p>Tuổi @age =>mày là thằng trẻ trâu</p>
+     }
+    else
+     {
+       <p>mày là thằng già trâu</p>
+     }
+}
+<h3>Loop: for,while,do....while,foreach</h3>
+@{ 
+    int num = 10;
+
+}
+@for(int i=0;i<num;i++)
+{ 
+    <li>@i=>@i*@i</li>
+}
+<h3>mảng</h3>
+@{     string[] names = { "Trần Văn A", "Nguyễn Thị B", "Lê Đại C" };
+
+}
+@foreach(var item in names)
+{
+    <p>@item</p>
+}

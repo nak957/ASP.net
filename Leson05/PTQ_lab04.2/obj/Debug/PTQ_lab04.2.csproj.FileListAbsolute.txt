@@ -1,0 +1,2 @@
+D:\LTweb.ASP\PTQ_lab04.2\obj\Debug\PTQ_lab04.2.csproj.AssemblyReference.cache
+D:\LTweb.ASP\PTQ_lab04.2\obj\Debug\PTQ_lab04.2.csproj.CoreCompileInputs.cache

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PTQ_tulam.Models.PTQ_product>
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Image Path</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.name</td>
+            <td>@item.Price</td>
+            <td>@item.ImagePath</td>
+        </tr>
+    }
+</table>

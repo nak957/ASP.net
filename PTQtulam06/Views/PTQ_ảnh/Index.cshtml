@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Album";
+}
+
+<h2>Album</h2>
+
+<p>
+    @Html.ActionLink("Upload New Image", "Upload")
+</p>
+
+<div>
+    @foreach (var image in Model)
+    {
+        <div style="display: inline-block; margin: 10px;">
+            <img src="@Url.Content("~/Content/Images/" + image)" style="width: 150px; height: 150px;" />
+            <form action="@Url.Action("Delete", "Album")" method="post" style="display: inline;">
+                <input type="hidden" name="fileName" value="@image" />
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    }
+</div>

@@ -1,0 +1,72 @@
+﻿@model PTQlesson08K22CNT2.Models.PtqBook
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PtqBook</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqCategory.PtqCategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqCategory.PtqCategoryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ptqpubliser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ptqpubliser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqPicture)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PTQlesson08K22CNT2.Models.PtqCategory>
+
+@{
+    ViewBag.Title = "PtqIndex";
+}
+
+<h2>PtqIndex</h2>
+
+<p>
+    @Html.ActionLink("PTQ:Create New", "PtqCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqCategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqCategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PtqCategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PtqCategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PtqCategoryId })
+        </td>
+    </tr>
+}
+
+</table>

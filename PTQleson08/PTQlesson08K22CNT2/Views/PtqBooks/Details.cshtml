@@ -1,0 +1,66 @@
+﻿@model PTQlesson08K22CNT2.Models.PtqBook
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PtqBook</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqCategory.PtqCategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqCategory.PtqCategoryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ptqpubliser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ptqpubliser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqPicture)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PtqBookId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

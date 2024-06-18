@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PtqK22CNT2Lesson09DbModelStoreContainer" CdmEntityContainer="PtqK22CNT2Lesson09DbEntities">
+    <EntitySetMapping Name="ptqKhoa">
+      <EntityTypeMapping TypeName="PtqK22CNT2Lesson09DbModel.ptqKhoa">
+        <MappingFragment StoreEntitySet="ptqKhoa">
+          <ScalarProperty Name="PtqMaKH" ColumnName="PtqMaKH" />
+          <ScalarProperty Name="PtqTenKH" ColumnName="PtqTenKH" />
+          <ScalarProperty Name="PtqTranngThai" ColumnName="PtqTranngThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ptqSinhVien">
+      <EntityTypeMapping TypeName="PtqK22CNT2Lesson09DbModel.ptqSinhVien">
+        <MappingFragment StoreEntitySet="ptqSinhVien">
+          <ScalarProperty Name="PtqMasv" ColumnName="PtqMasv" />
+          <ScalarProperty Name="PtqHosv" ColumnName="PtqHosv" />
+          <ScalarProperty Name="PtqTensv" ColumnName="PtqTensv" />
+          <ScalarProperty Name="PtqNgaySinh" ColumnName="PtqNgaySinh" />
+          <ScalarProperty Name="PtqPhai" ColumnName="PtqPhai" />
+          <ScalarProperty Name="PtqPhone" ColumnName="PtqPhone" />
+          <ScalarProperty Name="PtqEmail" ColumnName="PtqEmail" />
+          <ScalarProperty Name="PtqMaKH" ColumnName="PtqMaKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

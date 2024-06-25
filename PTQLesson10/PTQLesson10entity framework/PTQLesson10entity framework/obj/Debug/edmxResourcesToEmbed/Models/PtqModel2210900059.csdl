@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PtqK22CNT2Lesson10DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PtqKetqua">
+    <Key>
+      <PropertyRef Name="PtqMaSV" />
+      <PropertyRef Name="PtqMaMH" />
+    </Key>
+    <Property Name="PtqMaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PtqMaMH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PtqDiem" Type="Double" />
+    <NavigationProperty Name="PtqSinhVien" Relationship="Self.FK__PtqKetqua__PtqMa__4E88ABD4" FromRole="PtqKetqua" ToRole="PtqSinhVien" />
+    <NavigationProperty Name="PtqMonHoc" Relationship="Self.FK__PtqKetqua__PtqMa__4F7CD00D" FromRole="PtqKetqua" ToRole="PtqMonHoc" />
+  </EntityType>
+  <EntityType Name="PtqKhoa">
+    <Key>
+      <PropertyRef Name="PtqMaKH" />
+    </Key>
+    <Property Name="PtqMaKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PtqTenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PtqSinhVien" Relationship="Self.FK__PtqSinhVi__PtqMa__3D5E1FD2" FromRole="PtqKhoa" ToRole="PtqSinhVien" />
+  </EntityType>
+  <EntityType Name="PtqMonHoc">
+    <Key>
+      <PropertyRef Name="PtqMaMH" />
+    </Key>
+    <Property Name="PtqMaMH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PtqTenMH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtqSotiet" Type="Int32" />
+    <NavigationProperty Name="PtqKetqua" Relationship="Self.FK__PtqKetqua__PtqMa__4F7CD00D" FromRole="PtqMonHoc" ToRole="PtqKetqua" />
+  </EntityType>
+  <EntityType Name="PtqSinhVien">
+    <Key>
+      <PropertyRef Name="PtqMaSV" />
+    </Key>
+    <Property Name="PtqMaSV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PtqHoSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtqTenSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtqPhai" Type="Boolean" />
+    <Property Name="PtqNgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="PtqNoiSinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtqMaKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="PtqHocBong" Type="Double" />
+    <Property Name="PtqDiemTrungBinh" Type="Double" />
+    <NavigationProperty Name="PtqKetqua" Relationship="Self.FK__PtqKetqua__PtqMa__4E88ABD4" FromRole="PtqSinhVien" ToRole="PtqKetqua" />
+    <NavigationProperty Name="PtqKhoa" Relationship="Self.FK__PtqSinhVi__PtqMa__3D5E1FD2" FromRole="PtqSinhVien" ToRole="PtqKhoa" />
+  </EntityType>
+  <Association Name="FK__PtqKetqua__PtqMa__4E88ABD4">
+    <End Role="PtqSinhVien" Type="Self.PtqSinhVien" Multiplicity="1" />
+    <End Role="PtqKetqua" Type="Self.PtqKetqua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PtqSinhVien">
+        <PropertyRef Name="PtqMaSV" />
+      </Principal>
+      <Dependent Role="PtqKetqua">
+        <PropertyRef Name="PtqMaSV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PtqKetqua__PtqMa__4F7CD00D">
+    <End Role="PtqMonHoc" Type="Self.PtqMonHoc" Multiplicity="1" />
+    <End Role="PtqKetqua" Type="Self.PtqKetqua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PtqMonHoc">
+        <PropertyRef Name="PtqMaMH" />
+      </Principal>
+      <Dependent Role="PtqKetqua">
+        <PropertyRef Name="PtqMaMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PtqSinhVi__PtqMa__3D5E1FD2">
+    <End Role="PtqKhoa" Type="Self.PtqKhoa" Multiplicity="0..1" />
+    <End Role="PtqSinhVien" Type="Self.PtqSinhVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PtqKhoa">
+        <PropertyRef Name="PtqMaKH" />
+      </Principal>
+      <Dependent Role="PtqSinhVien">
+        <PropertyRef Name="PtqMaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PtqK22CNT2Lesson10DbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PtqKetqua" EntityType="Self.PtqKetqua" />
+    <EntitySet Name="PtqKhoa" EntityType="Self.PtqKhoa" />
+    <EntitySet Name="PtqMonHoc" EntityType="Self.PtqMonHoc" />
+    <EntitySet Name="PtqSinhVien" EntityType="Self.PtqSinhVien" />
+    <AssociationSet Name="FK__PtqKetqua__PtqMa__4E88ABD4" Association="Self.FK__PtqKetqua__PtqMa__4E88ABD4">
+      <End Role="PtqSinhVien" EntitySet="PtqSinhVien" />
+      <End Role="PtqKetqua" EntitySet="PtqKetqua" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PtqKetqua__PtqMa__4F7CD00D" Association="Self.FK__PtqKetqua__PtqMa__4F7CD00D">
+      <End Role="PtqMonHoc" EntitySet="PtqMonHoc" />
+      <End Role="PtqKetqua" EntitySet="PtqKetqua" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PtqSinhVi__PtqMa__3D5E1FD2" Association="Self.FK__PtqSinhVi__PtqMa__3D5E1FD2">
+      <End Role="PtqKhoa" EntitySet="PtqKhoa" />
+      <End Role="PtqSinhVien" EntitySet="PtqSinhVien" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

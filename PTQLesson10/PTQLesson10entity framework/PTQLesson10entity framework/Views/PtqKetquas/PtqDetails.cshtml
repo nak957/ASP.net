@@ -1,0 +1,42 @@
+﻿@model PTQLesson10entity_framework.Models.PtqKetqua
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PtqKetqua</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqDiem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqDiem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqSinhVien.PtqHoSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqSinhVien.PtqHoSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqMonHoc.PtqTenMH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqMonHoc.PtqTenMH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

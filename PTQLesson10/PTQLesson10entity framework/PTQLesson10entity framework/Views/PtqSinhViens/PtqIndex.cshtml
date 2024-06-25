@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PTQLesson10entity_framework.Models.PtqSinhVien>
+
+@{
+    ViewBag.Title = "PtqIndex";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("PTQ:Create New", "PtqCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqHoSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqTenSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqPhai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqNgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqNoiSinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqHocBong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqDiemTrungBinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqKhoa.PtqTenKH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqHoSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqTenSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqPhai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqNgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqNoiSinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqHocBong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqDiemTrungBinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqKhoa.PtqTenKH)
+        </td>
+        <td>
+            @Html.ActionLink("PTQ:Edit", "PtqEdit", new { id=item.PtqMaSV }) |
+            @Html.ActionLink("PTQ:Details", "PtqDetails", new { id=item.PtqMaSV }) |
+            @Html.ActionLink("PTQ:Delete", "PtqDelete", new { id=item.PtqMaSV })
+        </td>
+    </tr>
+}
+
+</table>

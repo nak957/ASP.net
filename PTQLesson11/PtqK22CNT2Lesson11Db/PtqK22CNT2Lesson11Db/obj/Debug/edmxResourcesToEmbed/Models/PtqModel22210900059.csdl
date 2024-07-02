@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PtqK22CNT2lesson11DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ptqtaikhoan">
+    <Key>
+      <PropertyRef Name="Ptqid" />
+    </Key>
+    <Property Name="Ptqid" Type="Int32" Nullable="false" />
+    <Property Name="PtqUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtqPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtqfullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtqAge" Type="Int32" />
+    <Property Name="PtqEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtqPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="PtqStatus" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="PtqK22CNT2lesson11DbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ptqtaikhoan" EntityType="Self.Ptqtaikhoan" />
+  </EntityContainer>
+</Schema>

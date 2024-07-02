@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PtqK22CNT2lesson11DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ptqtaikhoan">
+          <Key>
+            <PropertyRef Name="Ptqid" />
+          </Key>
+          <Property Name="Ptqid" Type="int" Nullable="false" />
+          <Property Name="PtqUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PtqPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="PtqfullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PtqAge" Type="int" />
+          <Property Name="PtqEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="PtqPhone" Type="char" MaxLength="10" />
+          <Property Name="PtqStatus" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="PtqK22CNT2lesson11DbModelStoreContainer">
+          <EntitySet Name="Ptqtaikhoan" EntityType="Self.Ptqtaikhoan" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PtqK22CNT2lesson11DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ptqtaikhoan">
+          <Key>
+            <PropertyRef Name="Ptqid" />
+          </Key>
+          <Property Name="Ptqid" Type="Int32" Nullable="false" />
+          <Property Name="PtqUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PtqPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PtqfullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PtqAge" Type="Int32" />
+          <Property Name="PtqEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PtqPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="PtqStatus" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="PtqK22CNT2lesson11DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ptqtaikhoan" EntityType="Self.Ptqtaikhoan" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PtqK22CNT2lesson11DbModelStoreContainer" CdmEntityContainer="PtqK22CNT2lesson11DbEntities">
+          <EntitySetMapping Name="Ptqtaikhoan">
+            <EntityTypeMapping TypeName="PtqK22CNT2lesson11DbModel.Ptqtaikhoan">
+              <MappingFragment StoreEntitySet="Ptqtaikhoan">
+                <ScalarProperty Name="Ptqid" ColumnName="Ptqid" />
+                <ScalarProperty Name="PtqUserName" ColumnName="PtqUserName" />
+                <ScalarProperty Name="PtqPassword" ColumnName="PtqPassword" />
+                <ScalarProperty Name="PtqfullName" ColumnName="PtqfullName" />
+                <ScalarProperty Name="PtqAge" ColumnName="PtqAge" />
+                <ScalarProperty Name="PtqEmail" ColumnName="PtqEmail" />
+                <ScalarProperty Name="PtqPhone" ColumnName="PtqPhone" />
+                <ScalarProperty Name="PtqStatus" ColumnName="PtqStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

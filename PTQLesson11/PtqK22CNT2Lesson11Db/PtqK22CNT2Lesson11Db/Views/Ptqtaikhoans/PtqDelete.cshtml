@@ -1,0 +1,80 @@
+﻿@model PtqK22CNT2Lesson11Db.Models.Ptqtaikhoan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ptqtaikhoan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqPassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqfullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqfullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtqStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtqStatus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

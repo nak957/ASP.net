@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PtqK22CNT2Lesson11Db.Models.Ptqtaikhoan>
+
+@{
+    ViewBag.Title = "PtqIndex";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("PTQ:Create New", "PtqCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqfullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtqStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqfullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtqStatus)
+        </td>
+        <td>
+            @Html.ActionLink("PTQ:Edit", "PtqEdit", new { id=item.Ptqid }) |
+            @Html.ActionLink("PTQ:Details", "PtqDetails", new { id=item.Ptqid }) |
+            @Html.ActionLink("PTQ:Delete", "PtqDelete", new { id=item.Ptqid })
+        </td>
+    </tr>
+}
+
+</table>
